@@ -65,7 +65,7 @@ $zen-auto-include-item-base: false;
   #navigation {
     /* Move the navbar up inside #main's padding. */
     position: absolute;
-    top: 0;
+    top: 7px;
     left: 0;
     z-index: 150;
     height: $nav-height;
@@ -186,6 +186,35 @@ $zen-auto-include-item-base: false;
       /* Span 1 column, starting in the 3rd column from left. */
       .block:nth-child(3n) {
         @include zen-grid-item(1, 3);
+      }
+    }
+  }
+}
+/**
+ * Use 5 grid columns for larger screens.
+ */
+@media all and (max-width: 768px) {
+  #navigation {
+    height: auto;
+
+    .responsive-menus,
+    .region-navigation {
+      display: table;
+      width: 100%;
+    }
+
+    .responsive-menus {
+      margin-bottom: 15px;
+    }
+  }
+
+  .not-front {
+    #navigation {
+      #block-islandora-solr-simple {
+        float: none;
+        position: relative;
+        top: auto;
+        width: auto;
       }
     }
   }
