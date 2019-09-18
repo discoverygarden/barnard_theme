@@ -1,0 +1,27 @@
+
+.block.social-media-menu {
+  display: inline-block;
+  margin-bottom: 0;
+  padding-left: 15px;
+
+  .contextual-links-wrapper {
+    right: 0;
+    top: -15px;
+  }
+
+  ul.menu {
+    margin: 0;
+    padding: 0 0 0 0px;
+
+    li {
+      list-style-type: none;
+      list-style-image: none;
+      display: inline-block;
+
+      a {
+        padding-right: 15px;
+        color: white;
+      }
+    }
+  }
+}
