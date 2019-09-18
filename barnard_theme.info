@@ -68,8 +68,6 @@ stylesheets[all][] = css/extras.css
 ; Optionally add some JavaScripts to your theme.
 
 scripts[] = js/script.js
-;scripts[] = js/header-fix.js
-
 
 
 ; This section lists the regions defined in Zen's default page.tpl.php and
