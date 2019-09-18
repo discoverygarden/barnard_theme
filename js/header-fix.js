@@ -16,8 +16,6 @@
                     if ($('#admin-menu-wrapper').length > 0) {
                         navbar_height += $('#admin-menu-wrapper').outerHeight(true);
                     }
-
-                    console.log(navbar_height);
                     navbar_height += "px";
                     $('body').css('padding-top', navbar_height);
                 };
