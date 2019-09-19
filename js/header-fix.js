@@ -17,7 +17,8 @@
                         navbar_height += $('#admin-menu-wrapper').outerHeight(true);
                     }
                     navbar_height += "px";
-                    $('body').css('padding-top', navbar_height);
+
+                    $('body').css('margin-top', navbar_height);
                 };
 
                 $(window).resize(function() {

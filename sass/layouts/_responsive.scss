@@ -58,8 +58,6 @@ $zen-auto-include-item-base: false;
 /* Navigation bar */
 @media all and (min-width: 480px) {
   #main {
-    /* Move all the children of #main down to make room. */
-    padding-top: 12em;
     position: relative;
   }
   #navigation {
