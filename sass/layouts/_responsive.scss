@@ -62,7 +62,6 @@ $zen-auto-include-item-base: false;
   }
   #navigation {
     /* Move the navbar up inside #main's padding. */
-    position: absolute;
     top: 7px;
     left: 0;
     z-index: 150;
@@ -71,20 +70,32 @@ $zen-auto-include-item-base: false;
   }
 }
 
-@media all and (min-width: 320px) and (max-width: 540px) {
+//@media all and (min-width: 320px) and (max-width: 540px) {
+@media all and (min-width: 320px) and (max-width: 645px) {
   #navigation {
     margin: 0 !important;
     padding: 0 15px !important;
   }
-  #header {
-    padding-left: 1.25em !important;
-    position: relative !important;
+  body.front {
+    -webkit-background-size: auto !important;
+    background-size: auto !important;
   }
   #content {
     clear: both !important;
     .page__title {
       margin: 0.75em 0 !important;
     }
+  }
+  #footer {
+    margin-top: 10em !important;
+    height: auto !important;
+    position: absolute;
+    text-align: center;
+    padding-bottom: 15px;
+  }
+  #header,
+  #footer {
+    padding-left: 10px !important;
   }
   .frontpage-panel {
     left: 0 !important;
@@ -93,9 +104,10 @@ $zen-auto-include-item-base: false;
     margin: 0 auto !important;
   }
   #block-views-featured-block {
-    width: 270px !important;
-    right: 9px !important;
+    width: auto !important;
+    right: 25px !important;
     top: -45px !important;
+    left: 25px;
   }
   #block-islandora-solr-display-switch {
     top: -17px !important;

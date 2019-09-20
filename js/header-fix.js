@@ -12,13 +12,28 @@
             $(window).load(function() {
                 var outter_height_fix = function() {
                     var navbar_height = 0;
+                    var admin_menu_height = $('#admin-menu-wrapper').outerHeight(true);
+                    var admin_menu = $('#admin-menu-wrapper').length;
 
-                    if ($('#admin-menu-wrapper').length > 0) {
-                        navbar_height += $('#admin-menu-wrapper').outerHeight(true);
+                    if (admin_menu > 0) {
+                        navbar_height += admin_menu_height;
                     }
-                    navbar_height += "px";
 
-                    $('body').css('margin-top', navbar_height);
+                    $('body').css('margin-top', (navbar_height + "px"));
+
+                    if ($('.front').length > 0) {
+                        var multiplyer = 2;
+
+                        if (admin_menu > 0) {
+                            multiplyer = 1;
+                        }
+
+                        navbar_height += ($('#header').outerHeight(true) * multiplyer);
+                        if ($(window).width() < 540) {
+                            navbar_height = 120;
+                        }
+                        $('#content').css('margin-top', (navbar_height + "px"));
+                    }
                 };
 
                 $(window).resize(function() {

@@ -18,10 +18,11 @@
 		width: 30px;
 		float: right;
 		position: relative;
-		top: -35px; right: 5px;
+		top: -30px;
+		right: 2px;
 		z-index: 50;
 		transition: all 0.3s ease 0s;
-		background-size: 25px;
+		background-size: 21px;
 		opacity: 1;
 	}
 	input.form-submit:hover {
@@ -175,7 +176,6 @@
 		position: relative;
 		top: -1em;
 	}
-
 }
 
 #block-islandora-solr-advanced, #block-islandora-solr-basic-facets, #block-menu-menu-collections {
