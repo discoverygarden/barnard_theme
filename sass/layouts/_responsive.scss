@@ -57,9 +57,9 @@ $zen-auto-include-item-base: false;
 
 /* Navigation bar */
 @media all and (min-width: 480px) {
-  //#main {
-  //  position: relative;
-  //}
+  #main {
+    position: relative;
+  }
   #navigation {
     /* Move the navbar up inside #main's padding. */
     top: 7px;

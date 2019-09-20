@@ -27,6 +27,7 @@
                         if (admin_menu > 0) {
                             multiplyer = 1;
                         }
+
                         navbar_height += ($('#header').outerHeight(true) * multiplyer);
                         if ($(window).width() < 540) {
                             navbar_height = 120;
