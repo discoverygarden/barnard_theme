@@ -13,8 +13,10 @@
 }
 
 #footer {
-	position: absolute;
-	margin-top: 3em;
+	position: fixed;
+	bottom: 0;
+	//margin-top: 3em;
+
 	.footer-content {
 		margin: 0;
 		a {
@@ -41,6 +43,11 @@
 .not-front {
 	#main {
 		padding-top: 20px;
+	}
+
+	footer {
+		position: relative !important;
+		margin-top: 25px;
 	}
 }
 

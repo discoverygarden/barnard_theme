@@ -18,6 +18,7 @@
            var height_offset = 0;
            if ($(window).width() < 625) {
                height_offset = 400;
+               height_offset = 0;
            }
            if ( ($(document.body).height()+(footerHeight)) < ($(window).height() - height_offset)) {
                //must stick to bottom
