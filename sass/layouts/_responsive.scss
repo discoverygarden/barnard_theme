@@ -86,11 +86,11 @@ $zen-auto-include-item-base: false;
     }
   }
   #footer {
-    margin-top: 10em !important;
-    height: auto !important;
-    position: absolute;
-    text-align: center;
-    padding-bottom: 15px;
+    //margin-top: 10em !important;
+    //height: auto !important;
+    //position: absolute;
+    //text-align: center;
+    //padding-bottom: 15px;
   }
   #header,
   #footer {
@@ -116,6 +116,18 @@ $zen-auto-include-item-base: false;
     top: 0.75em !important;
     width: auto !important;
     padding-bottom: 2.1em !important;
+  }
+
+  .page-node {
+    .nscad-un-data {
+      .about-box {
+        width: 100%;
+
+        &.about--right-column {
+          border-left: 1px solid black !important;
+        }
+      }
+    }
   }
 }
 

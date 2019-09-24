@@ -1,7 +1,40 @@
 
 
 @media all and (min-width: 320px) and (max-width: 540px) {
+  .islandora-solr-facet {
+    li {
+      font-size: 16px;
+      line-height: 32px;
+      position: relative;
 
+      a,
+      span {
+        display: inline-block;
+      }
+
+      .plusminus {
+        clear: right;
+
+        a {
+          font-size: 32px;
+          line-height: 32px;
+        }
+      }
+    }
+  }
+
+  footer {
+    position: relative !important;
+    height: auto !important;
+    text-align: center !important;
+    padding: 30px !important;
+  }
+
+  .front {
+    #main {
+      margin-bottom: 11em;
+    }
+  }
 }
 
 @media all and (min-width: 540px) and (max-width: 768px) {
