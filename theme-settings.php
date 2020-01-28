@@ -19,7 +19,7 @@ function barnard_theme_form_system_theme_settings_alter(&$form, &$form_state, $f
 
   $form['barnard_theme_general'] = array(
     '#type' => 'fieldset',
-    '#title' => t('Barnard Theme Configuration'),
+    '#title' => t('NSCAD Theme Configuration'),
   );
 
   // Get all themes.
