@@ -12,6 +12,19 @@
 	padding-left: 3.5em;
 }
 
+html {
+	height: 100%;
+}
+
+body.front {
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	margin-top: 29px;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
 #footer {
 	position: fixed;
 	bottom: 0;
