@@ -7,6 +7,27 @@
  * @see https://drupal.org/node/1728096
  */
 
+/**
+ * Implements hook_preprocess_html().
+ */
+function barnard_theme_preprocess_html(&$variables) {
+  if ($variables['is_front']) {
+    $fid = theme_get_setting('body_background_image');
+    if (!empty($fid) && isset(file_load($fid)->uri)) {
+      $background_url = file_create_url(file_load($fid)->uri);
+      $variables['attributes_array']['style'] = array(
+        "background-image: url($background_url)",
+      );
+    }
+    else {
+      $bg_path = drupal_get_path('theme', 'barnard_theme') . "/images/nscad/NSCAD_WindowsAV.jpg";
+      $bg_url = file_create_url($bg_path);
+      $variables['attributes_array']['style'] = array(
+        "background-image: url('" . $bg_url . "')",
+      );
+    }
+  }
+}
 
 /**
  * Override or insert variables into the maintenance page template.

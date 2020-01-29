@@ -51,7 +51,6 @@ stylesheets[all][] = system.theme.css
 
 ; Then we add our own stylesheet.
 stylesheets[all][] = css/styles.css
-stylesheets[all][] = css/extras.css
 stylesheets[all][] = module_css/admin_menu_toolbar.css
 stylesheets[all][] = module_css/admin_menu.css
 
@@ -139,6 +138,9 @@ settings[zen_html5_respond_meta][] = html5
 settings[zen_html5_respond_meta][] = meta
 settings[zen_rebuild_registry]     = 1
 settings[zen_wireframes]           = 0
+
+; Body background image.
+settings[body_background_image] = '';
 
 ; To make this sub-theme an admin theme with shortcut links next to titles,
 ; uncomment the line below.
