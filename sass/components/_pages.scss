@@ -17,6 +17,7 @@ html {
 }
 
 body.front {
+	// The header on the front page is always 80px, and footer is always 45px.
 	.front-background-image {
 		-webkit-background-size: cover;
 		-moz-background-size: cover;
