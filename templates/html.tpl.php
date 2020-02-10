@@ -41,6 +41,7 @@
   <?php endif; ?>
 </head>
 <body class="<?php print $classes; ?>" <?php print $attributes;?>>
+  <div class="front-background-image" <?php print drupal_attributes($background_style);?>></div>
   <?php print $page_top; ?>
   <?php print $page; ?>
   <?php print $page_bottom; ?>

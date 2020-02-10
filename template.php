@@ -15,14 +15,14 @@ function barnard_theme_preprocess_html(&$variables) {
     $fid = theme_get_setting('body_background_image');
     if (!empty($fid) && isset(file_load($fid)->uri)) {
       $background_url = file_create_url(file_load($fid)->uri);
-      $variables['attributes_array']['style'] = array(
+      $variables['background_style']['style'] = array(
         "background-image: url($background_url)",
       );
     }
     else {
       $bg_path = drupal_get_path('theme', 'barnard_theme') . "/images/nscad/NSCAD_WindowsAV.jpg";
       $bg_url = file_create_url($bg_path);
-      $variables['attributes_array']['style'] = array(
+      $variables['background_style']['style'] = array(
         "background-image: url('" . $bg_url . "')",
       );
     }
