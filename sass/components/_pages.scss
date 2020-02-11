@@ -17,12 +17,20 @@ html {
 }
 
 body.front {
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	margin-top: 29px;
-	background-repeat: no-repeat;
-	background-size: cover;
+	// The header on the front page is always 80px, and footer is always 45px.
+	.front-background-image {
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-repeat: no-repeat;
+		background-size: cover;
+		width: 100vw;
+		height: calc(100vh - 125px);
+		position: absolute;
+		top: 80px;
+		left: 0;
+	}
+
 }
 
 #footer {
