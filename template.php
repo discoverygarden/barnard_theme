@@ -70,14 +70,23 @@ function barnard_theme_preprocess_html(&$variables, $hook) {
  *
  * @param $variables
  *   An array of variables to pass to the theme template.
- * @param $hook
- *   The name of the template being rendered ("page" in this case.)
  */
-/* -- Delete this line if you want to use this function
-function barnard_theme_preprocess_page(&$variables, $hook) {
-  $variables['sample_variable'] = t('Lorem ipsum.');
+function barnard_theme_preprocess_page(&$variables) {
+  // If the page is for a custom NSCAD film collection, use the custom template.
+  $url_array = explode('/', $_GET['q']);
+  // XXX: If anything gets set up to make aliases for collections, this won't
+  // work because it assumes that the last part of the url is the pid.
+  $pid = end($url_array);
+  $obj = islandora_object_load($pid);
+  $isCustomCollection = FALSE;
+  if ($obj && !empty($obj->relationships->get(NSCADDORA_RELS_URI, 'isCustomType', 'nscad_film_collection', RELS_TYPE_PLAIN_LITERAL))) {
+    $isCustomCollection = TRUE;
+  }
+  if ($isCustomCollection) {
+//    $variables['theme_hook_suggestion'] = 'page__islandora__object__nscaddora_film_collection';
+  dpm($variables);
+  }
 }
-// */
 
 /**
  * Override or insert variables into the node templates.
