@@ -72,19 +72,16 @@ function barnard_theme_preprocess_html(&$variables, $hook) {
  *   An array of variables to pass to the theme template.
  */
 function barnard_theme_preprocess_page(&$variables) {
-  // If the page is for a custom NSCAD film collection, use the custom template.
-  $url_array = explode('/', $_GET['q']);
-  // XXX: If anything gets set up to make aliases for collections, this won't
-  // work because it assumes that the last part of the url is the pid.
-  $pid = end($url_array);
-  $obj = islandora_object_load($pid);
-  $isCustomCollection = FALSE;
+  // XXX: If anything gets set up to make aliases for collections, this might
+  // not work.
+  $obj = menu_get_object('islandora_object', 2);
+  $is_nscad_film_collection = FALSE;
   if ($obj && !empty($obj->relationships->get(NSCADDORA_RELS_URI, 'isCustomType', 'nscad_film_collection', RELS_TYPE_PLAIN_LITERAL))) {
-    $isCustomCollection = TRUE;
+    $is_nscad_film_collection = TRUE;
   }
-  if ($isCustomCollection) {
-//    $variables['theme_hook_suggestion'] = 'page__islandora__object__nscaddora_film_collection';
-  dpm($variables);
+  // If the page is for a custom NSCAD film collection, use the custom template.
+  if ($is_nscad_film_collection) {
+    $variables['theme_hook_suggestion'] = 'page__islandora__object__nscaddora_film_collection';
   }
 }
 
