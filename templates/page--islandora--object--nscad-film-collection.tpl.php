@@ -74,7 +74,7 @@
   <?php print render($page['navigation']); ?>
 
 </div>
-<div id="page">
+<div id="page" class="nscad-film-collection-page">
 
 
     
@@ -83,6 +83,7 @@
     <div id="content" class="column" role="main">
       <?php print render($page['highlighted']); ?>
       <a id="main-content"></a>
+      <?php print render($page['nscad_film_collection_header']); ?>
       <?php print render($title_prefix); ?>
       <?php if ($title): ?>
         <h1 class="page__title title" id="page-title"><?php print $title; ?></h1>
@@ -94,23 +95,10 @@
       <?php if ($action_links): ?>
         <ul class="action-links"><?php print render($action_links); ?></ul>
       <?php endif; ?>
-      <div class="results"><span class="results-for"><?php print t('Results for'); ?></span><?php print $breadcrumb; ?></div>
-      <?php print render($page['content']); ?>
+      <?php print render($page['nscad_film_left_column']); ?>
+      <?php print render($page['nscad_film_right_column']); ?>
       <?php print $feed_icons; ?>
     </div>
-
-    <?php
-      // Render the sidebars to see if there's anything in them.
-      $sidebar_first  = render($page['sidebar_first']);
-      $sidebar_second = render($page['sidebar_second']);
-    ?>
-
-    <?php if ($sidebar_first || $sidebar_second): ?>
-      <aside class="sidebars">
-        <?php print $sidebar_first; ?>
-        <?php print $sidebar_second; ?>
-      </aside>
-    <?php endif; ?>
 
   </div>
 

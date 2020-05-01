@@ -81,7 +81,7 @@ function barnard_theme_preprocess_page(&$variables) {
   }
   // If the page is for a custom NSCAD film collection, use the custom template.
   if ($is_nscad_film_collection) {
-    $variables['theme_hook_suggestion'] = 'page__islandora__object__nscaddora_film_collection';
+    $variables['theme_hook_suggestion'] = 'page__islandora__object__nscad_film_collection';
   }
 }
 
