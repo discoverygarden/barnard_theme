@@ -157,3 +157,18 @@ function barnard_theme_preprocess_block(&$variables, $hook) {
   //}
 }
 // */
+
+/**
+ * Override views for NSCAD Film Collection displays.
+ *
+ * @param $variables
+ *   An array of variables to pass to the theme template.
+ */
+function barnard_theme_preprocess_views_view(&$variables) {
+  if (($variables['name'] == 'nscad_film_collection_header') && (count($variables['view']->result) != 0)) {
+    $vid_pid = $variables['view']->result[0]->PID;
+    $video_object = array('object' => islandora_object_load($vid_pid));
+    // Display the video object returned by the view.
+    $variables['rows'] = theme('islandora_video', $video_object);
+  }
+}
