@@ -84,20 +84,22 @@
       <?php print render($page['highlighted']); ?>
       <a id="main-content"></a>
       <?php print render($page['nscad_film_collection_header']); ?>
-      <?php print render($title_prefix); ?>
-      <?php if ($title): ?>
-        <h1 class="page__title title" id="page-title"><?php print $title; ?></h1>
-      <?php endif; ?>
-      <?php print render($title_suffix); ?>
-      <?php print $messages; ?>
-      <?php print render($tabs); ?>
-      <?php print render($page['help']); ?>
-      <?php if ($action_links): ?>
-        <ul class="action-links"><?php print render($action_links); ?></ul>
-      <?php endif; ?>
-      <?php print render($page['nscad_film_left_column']); ?>
-      <?php print render($page['nscad_film_right_column']); ?>
-      <?php print $feed_icons; ?>
+      <div id="nscad-film-collection-below-header">
+        <?php print render($title_prefix); ?>
+        <?php if ($title): ?>
+          <h1 class="page__title title" id="page-title"><?php print $title; ?></h1>
+        <?php endif; ?>
+        <?php print render($title_suffix); ?>
+        <?php print $messages; ?>
+        <?php print render($tabs); ?>
+        <?php print render($page['help']); ?>
+        <?php if ($action_links): ?>
+          <ul class="action-links"><?php print render($action_links); ?></ul>
+        <?php endif; ?>
+        <?php print render($page['nscad_film_left_column']); ?>
+        <?php print render($page['nscad_film_right_column']); ?>
+        <?php print $feed_icons; ?>
+      </div>
     </div>
 
   </div>

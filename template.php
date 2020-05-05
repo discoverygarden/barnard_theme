@@ -83,7 +83,6 @@ function barnard_theme_preprocess_page(&$variables) {
   if ($is_nscad_film_collection) {
     $variables['theme_hook_suggestion'] = 'page__islandora__object__nscad_film_collection';
   }
-  dpm($variables);
 }
 
 /**
@@ -177,6 +176,5 @@ function barnard_theme_preprocess_views_view(&$variables) {
     $collection_obj = islandora_object_load($variables['view']->result[0]->PID);
     $variables['rows'] .= islandora_retrieve_description_markup($collection_obj);
     $variables['rows'] .= islandora_retrieve_metadata_markup($collection_obj);
-    dpm($variables);
   }
 }
