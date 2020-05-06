@@ -2,6 +2,14 @@
  * Styling for NSCAD Film Collection custom display.
  */
 
+// This block's height is weird and pushing things down for no apparent reason,
+// so let's just constrain it to not do that.
+.not-front {
+  #block-islandora-solr-simple {
+    max-height: 2.22em;
+  }
+}
+
 #page.nscad-film-collection-page {
   max-width: 100%;
   #main {
