@@ -70,14 +70,20 @@ function barnard_theme_preprocess_html(&$variables, $hook) {
  *
  * @param $variables
  *   An array of variables to pass to the theme template.
- * @param $hook
- *   The name of the template being rendered ("page" in this case.)
  */
-/* -- Delete this line if you want to use this function
-function barnard_theme_preprocess_page(&$variables, $hook) {
-  $variables['sample_variable'] = t('Lorem ipsum.');
+function barnard_theme_preprocess_page(&$variables) {
+  // XXX: If anything gets set up to make aliases for collections, this might
+  // not work.
+  $obj = menu_get_object('islandora_object', 2);
+  $is_nscad_film_collection = FALSE;
+  if ($obj && !empty($obj->relationships->get(NSCADDORA_RELS_URI, 'isCustomType', 'nscad_film_collection', RELS_TYPE_PLAIN_LITERAL))) {
+    $is_nscad_film_collection = TRUE;
+  }
+  // If the page is for a custom NSCAD film collection, use the custom template.
+  if ($is_nscad_film_collection) {
+    $variables['theme_hook_suggestion'] = 'page__islandora__object__nscad_film_collection';
+  }
 }
-// */
 
 /**
  * Override or insert variables into the node templates.
@@ -151,3 +157,26 @@ function barnard_theme_preprocess_block(&$variables, $hook) {
   //}
 }
 // */
+
+/**
+ * Override views for NSCAD Film Collection displays.
+ *
+ * @param $variables
+ *   An array of variables to pass to the theme template.
+ */
+function barnard_theme_preprocess_views_view(&$variables) {
+  if (count($variables['view']->result) > 0) {
+    if ($variables['name'] == 'nscad_film_collection_header') {
+      $vid_pid = $variables['view']->result[0]->PID;
+      $video_object = array('object' => islandora_object_load($vid_pid));
+      // Display the video object returned by the view.
+      $variables['rows'] .= theme('islandora_video', $video_object);
+    }
+    elseif ($variables['name'] == 'nscad_film_collection_metadata') {
+      module_load_include('inc', 'islandora', 'includes/metadata');
+      $collection_obj = islandora_object_load($variables['view']->result[0]->PID);
+      $variables['rows'] .= islandora_retrieve_description_markup($collection_obj);
+      $variables['rows'] .= islandora_retrieve_metadata_markup($collection_obj);
+    }
+  }
+}
