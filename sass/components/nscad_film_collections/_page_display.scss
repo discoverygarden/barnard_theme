@@ -11,13 +11,15 @@
 }
 
 #page.nscad-film-collection-page {
-  max-width: 100%;
+  max-width: 1600px;
   #main {
     padding-top: 0px;
     #content {
       float: none;
       width: 100%;
       margin: 0px;
+      margin-left: auto;
+      margin-right: auto;
       padding: 0px;
 
       .views-field-PID {
